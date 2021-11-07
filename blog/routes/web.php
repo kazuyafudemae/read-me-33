@@ -11,7 +11,12 @@
 |
  */
 //Route::get('/', function () { return redirect('/home'); })->name('login');
-Route::get('/', 'LoginController@showLoginForm')->name('login');
+
+Route::get('/', function () {
+	    return view('welcome');
+});
+
+Auth::routes();
 
 
 /*
@@ -43,6 +48,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 
 
 /*
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+
 Route::get('/', 'ItemController@index')->name('item.index');
 
 Route::get('/detail', 'ItemController@detail')->name('item.detail');
