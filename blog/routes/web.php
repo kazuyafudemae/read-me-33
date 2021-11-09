@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 /*
 	User ログイン後
 */
@@ -48,9 +47,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 
 
 /*
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::get('/', 'ItemController@index')->name('item.index');
+
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::get('/detail', 'ItemController@detail')->name('item.detail');
 
