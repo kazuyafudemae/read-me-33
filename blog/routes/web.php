@@ -50,9 +50,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
 
 Route::get('/', 'ItemController@index')->name('item.index');
 
+<<<<<<< HEAD
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::get('/detail', 'ItemController@detail')->name('item.detail');
+=======
+>>>>>>> parent of 94db6c5... task32 complete
 
 Auth::routes();
 

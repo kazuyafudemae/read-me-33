@@ -7,16 +7,11 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-	public function index() {
-		$items = DB::select('select * from items');
-		return view('item.index', ['items' => $items]);
-	}
-
-	public function detail(Request $request) {
+	public function index(Request $request) {
 		if (isset($request->id)) {
 			$param = ['id' => $request->id];
 			$items = DB::select('select * from items where id = :id', $param);
-			return view('item.detail', ['items' => $items]);
+			return view('item.index', ['items' => $items]);
 		} else {
 			$items = DB::select('select * from items');
 			return view('item.index', ['items' => $items]);
