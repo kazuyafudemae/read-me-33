@@ -11,7 +11,6 @@
 |
  */
 use App\User;
-use App\Admin;
 
 Auth::routes();
 
