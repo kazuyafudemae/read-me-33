@@ -12,6 +12,7 @@
  */
 use App\User;
 
+
 Auth::routes();
 
 Route::get('/', function () {
